@@ -1,4 +1,4 @@
-package com.ela.service;
+package com.ela.projet.service;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
