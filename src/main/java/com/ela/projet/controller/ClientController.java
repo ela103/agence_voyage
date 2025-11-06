@@ -32,7 +32,10 @@ public class ClientController {
     public Client trouverClient(@PathVariable Long id) {
         return clientService.trouverClientParId(id);
     }
-
+    @PutMapping("/{id}")
+    public Client mettreAJourClient(@PathVariable Long id, @RequestBody Client clientDetails) {
+        return clientService.mettreAJourClient(id, clientDetails);
+    }
     
     // Supprimer un client
     @DeleteMapping("/{id}")
