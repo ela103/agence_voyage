@@ -7,6 +7,7 @@ import java.time.LocalDate;
 
 @Entity
 public class Paiement {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -23,35 +24,45 @@ public class Paiement {
     @Enumerated(EnumType.STRING)
     private StatutPaiement statut;
 
-	public Reservation getReservation() {
-		return reservation;
-	}
-
-	public void setReservation(Reservation reservation) {
-		this.reservation = reservation;
-	}
-
-	public LocalDate getDatePaiement() {
-		return datePaiement;
-	}
-
-	public void setDatePaiement(LocalDate datePaiement) {
-		this.datePaiement = datePaiement;
-	}
-
-	public BigDecimal getMontant() {
-		return montant;
-	}
-
-	public void setMontant(BigDecimal montant) {
-		this.montant = montant;
-	}
-
-	public StatutPaiement getStatut() {
-		return statut;
-	}
-
-	public void setStatut(StatutPaiement statut) {
-		this.statut = statut;
-	}
+    // --- Getters & Setters ---
+    public Long getId() {
+        return id;
     }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Reservation getReservation() {
+        return reservation;
+    }
+
+    public void setReservation(Reservation reservation) {
+        this.reservation = reservation;
+    }
+
+    public LocalDate getDatePaiement() {
+        return datePaiement;
+    }
+
+    public void setDatePaiement(LocalDate datePaiement) {
+        this.datePaiement = datePaiement;
+    }
+
+    public BigDecimal getMontant() {
+        return montant;
+    }
+
+    public void setMontant(BigDecimal montant) {
+        this.montant = montant;
+    }
+
+    public StatutPaiement getStatut() {
+        return statut;
+    }
+
+    public void setStatut(StatutPaiement statut) {
+        this.statut = statut;
+    }
+}
+

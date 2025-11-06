@@ -5,6 +5,8 @@ import jakarta.validation.constraints.Positive;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 @Entity
 public class Reservation {
     @Id
@@ -13,10 +15,12 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn(name = "client_id")
+    @JsonIgnoreProperties("reservations")
     private Client client;
 
     @ManyToOne
     @JoinColumn(name = "voyage_id")
+    @JsonIgnoreProperties("reservations")
     private Voyage voyage;
 
     private LocalDate dateReservation;
@@ -70,6 +74,14 @@ public class Reservation {
 
 	public StatutReservation getStatut() {
 		return statut;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public void setStatut(StatutReservation statut) {

@@ -25,7 +25,7 @@ public class ClientService {
             .orElseThrow(() -> new RuntimeException("Client non trouvé"));
     }
 
-
+    
     public void supprimerClient(Long id) {
         Client client = trouverClientParId(id);
         clientRepository.delete(client);
