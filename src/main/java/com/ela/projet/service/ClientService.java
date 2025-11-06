@@ -30,4 +30,10 @@ public class ClientService {
         Client client = trouverClientParId(id);
         clientRepository.delete(client);
     }
+    public Client mettreAJourClient(Long id, Client clientDetails) {
+        Client client = trouverClientParId(id);
+        client.setNom(clientDetails.getNom());
+        client.setEmail(clientDetails.getEmail());
+        return clientRepository.save(client);
+    }
 }
