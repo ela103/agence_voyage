@@ -20,6 +20,7 @@ public class ClientController {
         return clientService.ajouterClient(client);
     }
 
+
     // Lister tous les clients
     @GetMapping
     public List<Client> listerClients() {

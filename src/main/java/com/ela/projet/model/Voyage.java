@@ -20,6 +20,7 @@ public class Voyage {
     private BigDecimal prixParPersonne;
 
     @OneToMany(mappedBy = "voyage", cascade = CascadeType.ALL)
+    @com.fasterxml.jackson.annotation.JsonManagedReference
     private List<Reservation> reservations = new ArrayList<>();
 
 	public String getDestination() {
@@ -44,6 +45,14 @@ public class Voyage {
 
 	public void setReservations(List<Reservation> reservations) {
 		this.reservations = reservations;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 }
